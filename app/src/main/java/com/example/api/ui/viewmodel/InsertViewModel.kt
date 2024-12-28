@@ -6,6 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import model.Mahasiswa
 import repository.MahasiswaRepository
 
 class InsertViewModel(private val mahasiswaRepository: MahasiswaRepository): ViewModel() {
@@ -37,4 +38,13 @@ data class InsertUiEvent (
     val jenisKelamin: String = "",
     val kelas: String = "",
     val angkatan: String = ""
+)
+
+fun InsertUiEvent.toMhs(): Mahasiswa = Mahasiswa (
+    nim = nim,
+    nama = nama,
+    alamat = alamat,
+    jenisKelamin = jenisKelamin,
+    kelas = kelas,
+    angkatan = angkatan
 )
