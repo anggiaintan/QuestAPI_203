@@ -1,6 +1,6 @@
-package service
+package com.example.api.service
 
-import model.Mahasiswa
+import com.example.api.model.Mahasiswa
 import okhttp3.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -20,7 +20,7 @@ interface MahasiswaService {
     suspend fun getAllMahasiswa(): List<Mahasiswa>
 
     @GET("baca1mahasiswa.php/{nim}")
-    suspend fun getMahasiswaByNim(@Query("nim") nim:String):Mahasiswa
+    suspend fun getMahasiswaByNim(@Query("nim") nim:String): Mahasiswa
 
     @POST("insertmahasiswa.php")
     suspend fun insertMahasiswa(@Body mahasiswa: Mahasiswa)

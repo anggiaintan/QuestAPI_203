@@ -1,8 +1,8 @@
-package repository
+package com.example.api.repository
 
-import model.Mahasiswa
+import com.example.api.model.Mahasiswa
 import okio.IOException
-import service.MahasiswaService
+import com.example.api.service.MahasiswaService
 
 interface MahasiswaRepository {
     suspend fun getAllMahasiswa(): List<Mahasiswa>

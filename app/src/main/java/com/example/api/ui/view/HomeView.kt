@@ -43,7 +43,7 @@ import com.example.api.ui.customwidget.CostumeTopAppBar
 import com.example.api.ui.viewmodel.HomeUiState
 import com.example.api.ui.viewmodel.HomeViewModel
 import com.example.api.ui.viewmodel.PenyediaViewModel
-import model.Mahasiswa
+import com.example.api.model.Mahasiswa
 
 object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
@@ -129,7 +129,7 @@ fun HomeStatus (
 fun OnLoading (modifier: Modifier = Modifier) {
     Image(
         modifier = modifier.size(200.dp),
-        painter = painterResource(id = R.drawable.loading_img),
+        painter = painterResource(id = R.drawable.loading),
         contentDescription = stringResource(R.string.loading)
     )
 }

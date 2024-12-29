@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import coil.network.HttpException
 import kotlinx.coroutines.launch
-import model.Mahasiswa
-import repository.MahasiswaRepository
+import com.example.api.model.Mahasiswa
+import com.example.api.repository.MahasiswaRepository
 import java.io.IOException
 
 sealed class HomeUiState {

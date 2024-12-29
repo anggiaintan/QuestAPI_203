@@ -6,8 +6,8 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import model.Mahasiswa
-import repository.MahasiswaRepository
+import com.example.api.model.Mahasiswa
+import com.example.api.repository.MahasiswaRepository
 
 class InsertViewModel(private val mahasiswaRepository: MahasiswaRepository): ViewModel() {
     var uiState by mutableStateOf(InsertUiState())
