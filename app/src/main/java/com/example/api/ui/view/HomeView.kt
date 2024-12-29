@@ -36,11 +36,13 @@ import androidx.compose.ui.input.pointer.PointerIcon.Companion.Text
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.api.R
 import com.example.api.navigation.DestinasiNavigasi
 import com.example.api.ui.customwidget.CostumeTopAppBar
 import com.example.api.ui.viewmodel.HomeUiState
 import com.example.api.ui.viewmodel.HomeViewModel
+import com.example.api.ui.viewmodel.PenyediaViewModel
 import model.Mahasiswa
 
 object DestinasiHome : DestinasiNavigasi {
@@ -54,7 +56,7 @@ fun HomeScreen (
     navigateToItemEntry: () -> Unit,
     modifier: Modifier = Modifier,
     onDetailClick: (String) -> Unit = {},
-    viewModel: HomeViewModel = viewModel()
+    viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold (

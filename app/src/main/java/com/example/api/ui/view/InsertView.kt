@@ -27,6 +27,7 @@ import com.example.api.ui.customwidget.CostumeTopAppBar
 import com.example.api.ui.viewmodel.InsertUiEvent
 import com.example.api.ui.viewmodel.InsertUiState
 import com.example.api.ui.viewmodel.InsertViewModel
+import com.example.api.ui.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.launch
 
 object DestinasiEntry : DestinasiNavigasi {
@@ -39,7 +40,7 @@ object DestinasiEntry : DestinasiNavigasi {
 fun EntryMhsScreen (
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: InsertViewModel = viewModel()
+    viewModel: InsertViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
