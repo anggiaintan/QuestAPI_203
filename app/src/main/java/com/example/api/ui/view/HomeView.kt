@@ -79,7 +79,7 @@ fun HomeScreen (
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,
-                    contentDescription = "Add Kontak")
+                    contentDescription = "Add Mahasiswa")
             }
         },
     ) { innerPadding ->
@@ -107,7 +107,7 @@ fun HomeStatus (
         is HomeUiState.Success ->
             if (homeUiState.mahasiswa.isEmpty()) {
                 return Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Text(text = "Tidak ada data kontak")
+                    Text(text = "Tidak ada data mahasiswa")
                 }
             } else {
                 MhsLayout(
@@ -163,14 +163,14 @@ fun MhsLayout (
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        items(mahasiswa) { kontak ->
+        items(mahasiswa) { mahasiswa ->
             MhsCard(
-                mahasiswa = kontak,
+                mahasiswa = mahasiswa,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { onDetailClick(kontak) },
+                    .clickable { onDetailClick(mahasiswa) },
                 onDeleteClick = {
-                    onDeleteClick(kontak)
+                    onDeleteClick(mahasiswa)
                 }
             )
         }
