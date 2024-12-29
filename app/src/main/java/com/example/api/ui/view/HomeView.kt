@@ -37,10 +37,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.api.R
+import com.example.api.navigation.DestinasiNavigasi
 import com.example.api.ui.customwidget.CostumeTopAppBar
 import com.example.api.ui.viewmodel.HomeUiState
 import com.example.api.ui.viewmodel.HomeViewModel
 import model.Mahasiswa
+
+object DestinasiHome : DestinasiNavigasi {
+    override val route = "home"
+    override val titleRes = "Home Mhs"
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -102,6 +108,7 @@ fun HomeStatus (
                     Text(text = "Tidak ada data kontak")
                 }
             } else {
+                MhsLayout(
                 mahasiswa = homeUiState.mahasiswa, modifier = modifier.fillMaxWidth(),
                 onDetailClick = {
                     onDetailClick(it.nim)
