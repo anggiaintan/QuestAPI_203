@@ -28,7 +28,7 @@ class HomeViewModel (private val mhs: MahasiswaRepository): ViewModel() {
         viewModelScope.launch {
             mhsUiState = HomeUiState.Loading
             mhsUiState = try {
-                HomeUiState.Success(mhs.getMahasiswa())
+                HomeUiState.Success(mhs.getAllMahasiswa())
             } catch (e: IOException) {
                 HomeUiState.Error
             } catch (e: HttpException) {

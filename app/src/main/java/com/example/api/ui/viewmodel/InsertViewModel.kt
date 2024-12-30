@@ -19,7 +19,7 @@ class InsertViewModel(private val mahasiswaRepository: MahasiswaRepository): Vie
     suspend fun insertMhs() {
         viewModelScope.launch {
             try {
-                mhs.insertMahasiswa(uiState.insertUiEvent.toMhs())
+                mahasiswaRepository.insertMahasiswa(uiState.insertUiEvent.toMhs())
             } catch (e: Exception) {
                 e.printStackTrace()
             }

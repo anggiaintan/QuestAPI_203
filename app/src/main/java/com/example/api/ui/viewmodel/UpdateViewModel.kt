@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.api.model.Mahasiswa
 import com.example.api.repository.MahasiswaRepository
+import com.example.api.ui.view.DestinasiUpdate
 import kotlinx.coroutines.launch
 
 class UpdateViewModel (
@@ -22,7 +23,7 @@ private fun getMahasiswa(){
         try {
             val mahasiswa = mhs.getMahasiswaByNim(nim)
             mahasiswa?.let {
-                uiState.value = it.toInsertUiEvent()
+                uiState.value = it.toInsertUIEvent()
             }
         } catch (e: Exception) {
             e.printStackTrace()
@@ -43,6 +44,6 @@ private fun getMahasiswa(){
         uiState.value = uiState.value.copy(insertUiEvent = insertUiEvent)
     }
 }
-fun Mahasiswa.toInsertUiEvent(): InsertUiState = InsertUiState (
+fun Mahasiswa.toInsertUIEvent(): InsertUiState = InsertUiState (
     insertUiEvent = this.toDetailUiEvent()
 )

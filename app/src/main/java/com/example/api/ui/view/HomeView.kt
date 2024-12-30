@@ -32,7 +32,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.input.pointer.PointerIcon.Companion.Text
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -105,13 +104,13 @@ fun HomeStatus (
     when (homeUiState) {
         is HomeUiState.Loading -> OnLoading(modifier = modifier.fillMaxSize())
         is HomeUiState.Success ->
-            if (homeUiState.mahasiswa.isEmpty()) {
+            if (homeUiState.mahasiswaList.isEmpty()) {
                 return Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                     Text(text = "Tidak ada data mahasiswa")
                 }
             } else {
                 MhsLayout(
-                mahasiswa = homeUiState.mahasiswa, modifier = modifier.fillMaxWidth(),
+                mahasiswa = homeUiState.mahasiswaList, modifier = modifier.fillMaxWidth(),
                 onDetailClick = {
                     onDetailClick(it.nim)
                 },
