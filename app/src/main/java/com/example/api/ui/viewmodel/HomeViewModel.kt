@@ -12,7 +12,7 @@ import com.example.api.repository.MahasiswaRepository
 import java.io.IOException
 
 sealed class HomeUiState {
-    data class Success(val mahasiswaList: List<Mahasiswa>) : HomeUiState ()
+    data class Success(val mahasiswa: List<Mahasiswa>) : HomeUiState ()
     object Error : HomeUiState ()
     object Loading : HomeUiState ()
 }

@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import com.example.api.model.Mahasiswa
 import com.example.api.repository.MahasiswaRepository
 
-class InsertViewModel(private val mahasiswaRepository: MahasiswaRepository): ViewModel() {
+class InsertViewModel(private val mhs: MahasiswaRepository): ViewModel() {
     var uiState by mutableStateOf(InsertUiState())
         private set
     fun updateInsertMhsState(insertUiEvent: InsertUiEvent) {
@@ -19,7 +19,7 @@ class InsertViewModel(private val mahasiswaRepository: MahasiswaRepository): Vie
     suspend fun insertMhs() {
         viewModelScope.launch {
             try {
-                mahasiswaRepository.insertMahasiswa(uiState.insertUiEvent.toMhs())
+                mhs.insertMahasiswa(uiState.insertUiEvent.toMhs())
             } catch (e: Exception) {
                 e.printStackTrace()
             }

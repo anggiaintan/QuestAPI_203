@@ -30,7 +30,6 @@ fun PengelolaHalaman(
             HomeScreen(
                 navigateToItemEntry = { navController.navigate(DestinasiEntry.route) },
                 onDetailClick = { nim ->
-                    println ("PengelolaHalaman: nim = $nim")
                     navController.navigate("${DestinasiDetail.route}/$nim") {
                         popUpTo(DestinasiHome.route) {
                             inclusive = true
