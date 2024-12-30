@@ -1,4 +1,4 @@
-package com.example.api.ui
+package com.example.api.dependenciesinjection
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
@@ -13,7 +13,7 @@ interface AppContainer {
 }
 
 class MahasiswaContainer: AppContainer {
-    private val baseUrl = "http://10.0.2.2:8000/umyTI/umyTI/"
+    private val baseUrl = "http://10.0.2.2:8000/umyTI/"
     private val json = Json { ignoreUnknownKeys = true }
     private val retrofit: Retrofit = Retrofit.Builder()
         .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))

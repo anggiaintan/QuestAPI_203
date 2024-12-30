@@ -1,8 +1,8 @@
 package com.example.api
 
 import android.app.Application
-import com.example.api.ui.AppContainer
-import com.example.api.ui.MahasiswaContainer
+import com.example.api.dependenciesinjection.AppContainer
+import com.example.api.dependenciesinjection.MahasiswaContainer
 
 class MahasiswaApplications : Application() {
     lateinit var container: AppContainer
