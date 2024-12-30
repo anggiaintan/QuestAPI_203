@@ -113,7 +113,7 @@ fun FormInput(
     ) {
         OutlinedTextField (
             value = insertUiEvent.nama,
-            onValueChange = {onValueChange(InsertUiEvent.copy(nama = it))},
+            onValueChange = {onValueChange(insertUiEvent.copy(nama = it))},
             label = { Text("Nama") },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
@@ -121,7 +121,7 @@ fun FormInput(
         )
         OutlinedTextField (
             value = insertUiEvent.nim,
-            onValueChange = {onValueChange(InsertUiEvent.copy(nim = it))},
+            onValueChange = {onValueChange(insertUiEvent.copy(nim = it))},
             label = { Text("NIM") },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
@@ -129,7 +129,7 @@ fun FormInput(
         )
         OutlinedTextField (
             value = insertUiEvent.jenisKelamin,
-            onValueChange = {onValueChange(InsertUiEvent.copy(jenisKelamin = it))},
+            onValueChange = {onValueChange(insertUiEvent.copy(jenisKelamin = it))},
             label = { Text("Jenis Kelamin") },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
@@ -137,7 +137,7 @@ fun FormInput(
         )
         OutlinedTextField (
             value = insertUiEvent.alamat,
-            onValueChange = {onValueChange(InsertUiEvent.copy(alamat = it))},
+            onValueChange = {onValueChange(insertUiEvent.copy(alamat = it))},
             label = { Text("Alamat") },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
@@ -145,7 +145,7 @@ fun FormInput(
         )
         OutlinedTextField (
             value = insertUiEvent.kelas,
-            onValueChange = {onValueChange(InsertUiEvent.copy(kelas = it))},
+            onValueChange = {onValueChange(insertUiEvent.copy(kelas = it))},
             label = { Text("Kelas") },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
@@ -153,7 +153,7 @@ fun FormInput(
         )
         OutlinedTextField(
             value = insertUiEvent.angkatan,
-            onValueChange = {onValueChange(InsertUiEvent.copy(angkatan = it))},
+            onValueChange = {onValueChange(insertUiEvent.copy(angkatan = it))},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text("Angkatan") },
             modifier = Modifier.fillMaxWidth(),
